@@ -1,19 +1,11 @@
 var express = require("express");
 var router = express.Router();
 
-const {
-  getResources,
-  getResourceByID,
-  addResource,
-  updateResource,
-  deleteResource,
-} = require("../controller/resource/resourceController");
+const { getUsers, createUser } = require("../controller/user/userController");
 
 /* GET users listing. */
-router.get("/resources", getResources);
-router.get("/resource/:id", getResourceByID);
-router.post("/addResource", addResource);
-router.put("/updateResource/:id", updateResource);
-router.delete("/deleteResource/:id", deleteResource);
+router.get("/", getUsers);
+
+router.post("/createUser", createUser);
 
 module.exports = router;
